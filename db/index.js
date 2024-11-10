@@ -7,16 +7,16 @@ mongoose.connect(
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
+  // Schema definition here
   username: String,
   password: String,
-  // Schema definition here
 });
 
 const UserSchema = new mongoose.Schema({
   // Schema definition here
   username: String,
   password: String,
-  purchacesCourses: [
+  purchasedCourses: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Course",

@@ -40,7 +40,15 @@ router.post("/courses", adminMiddleware, async (req, res) => {
   res.json({ message: "Course Created Successful!", courseId: newCourse._id });
 });
 
-router.get("/courses", adminMiddleware, (req, res) => {
+router.get("/courses", adminMiddleware, async (req, res) => {
+  console.log("start");
+
+  const Courses = await Course.find({});
+  res.json({
+    message: Courses,
+  });
+  // console.log("Courses: ", Courses);
+
   // Implement fetching all courses logic
 });
 
